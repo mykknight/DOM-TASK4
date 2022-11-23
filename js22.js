@@ -1,5 +1,5 @@
 // //console.dir(document);
-console.log(document.domain);
+//console.log(document.domain);
 // console.log(document.URL);
 // console.log(document);
 // console.log(document.title);
@@ -64,21 +64,93 @@ console.log(1);
 // var item = document.querySelector('.list-group-item');
 // item.style.color = 'blue';
 
- var lastitem = document.querySelector('.list-group-item:nth-child(2)');
- lastitem.style.backgroundColor = 'green';
+//  var lastitem = document.querySelector('.list-group-item:nth-child(2)');
+//  lastitem.style.backgroundColor = 'green';
 
- var thirditem = document.querySelector('.list-group-item:nth-child(3)');
- thirditem.style.display='none';
+//  var thirditem = document.querySelector('.list-group-item:nth-child(3)');
+//  thirditem.style.display='none';
 
-// queryselectorALL//
-var titles = document.querySelectorAll('.title');
+// // queryselectorALL//
+// var titles = document.querySelectorAll('.title');
 
-console.log(titles);
+// console.log(titles);
 
-titles[0].textContent = 'Hello';
+// titles[0].textContent = 'Hello';
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
+// var odd = document.querySelectorAll('li:nth-child(odd)');
 
-for(var i = 0; i < odd.length; i++){
-    odd[i].style.backgroundColor = 'green';
-}
+// for(var i = 0; i < odd.length; i++){
+//     odd[i].style.backgroundColor = 'green';
+// }
+
+//Traversing the DOM//
+
+var itemlist = document.querySelector('#items');
+//parentNode
+// console.log(itemlist.parentNode);
+// itemlist.parentNode.parentNode.parentNode.style.backgroundColor = 'purple';
+
+//parentElement
+// console.log(itemlist.parentElement);
+// itemlist.parentElement.style.backgroundColor = 'purple';
+
+//childnode
+//console.log(itemlist.childNodes);
+
+console.log(itemlist.children);
+itemlist.children[1].style.backgroundColor = 'violet';
+
+// //firstchild
+// console.log(itemlist.firstChild);
+
+// //firstelementchild
+// console.log(itemlist.firstElementChild);
+// itemlist.firstElementChild.textContent='HEllo';
+
+//lastchild
+// console.log(itemlist.lastChild);
+
+// //firstelementchild
+// console.log(itemlist.lastElementChild);
+// itemlist.lastElementChild.textContent='HEllo';
+
+//nextsibling
+// console.log(itemlist.nextSibling);
+// //nextElementSibling
+// console.log(itemlist.nextElementSibling);
+
+//previoussibling
+console.log(itemlist.previousSibling);
+//previouselementsibling
+console.log(itemlist.previousElementSibling);
+itemlist.previousElementSibling.style.color = 'red';
+
+//createElement
+
+//create a div
+var newDiv = document.createElement('div');
+
+newDiv.className='Hellw';
+
+//add ID
+newDiv.id = 'hell1';
+
+//add attr
+newDiv.setAttribute('title','hello div');
+
+//create text node
+var newDivText = document.createTextNode('hello new');
+
+//add text to div
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+
+console.log(newDiv);
+
+newDiv.style.fontSize = '30px';
+
+container.insertBefore(newDiv,h1);
+
